@@ -474,7 +474,9 @@ section{position:relative;z-index:2}
 
 /* small project cards */
 .projects-row{
-  display:grid;grid-template-columns:1fr 1fr;gap:2rem;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:2rem;
 }
 .project-card{
   background:var(--glass);border:1px solid var(--border);
@@ -657,6 +659,11 @@ footer span{color:var(--indigo)}
   .hero-actions{flex-direction:column;align-items:center}
   .section-inner{padding:4rem 1.25rem}
 }
+@media(max-width:1100px){
+  .projects-row{
+    grid-template-columns:1fr;
+  }
+}
 
 /* typewriter cursor */
 .typewriter::after{
@@ -785,6 +792,9 @@ footer span{color:var(--indigo)}
       <span class="badge">Firebase</span>
       <span class="badge">Figma</span>
       <span class="badge">MySQL</span>
+      <span class="badge">TensorFlow</span>
+      <span class="badge">Flask</span>
+      <span class="badge">AI/ML</span>
     </div>
   </div>
 
@@ -863,6 +873,10 @@ footer span{color:var(--indigo)}
           <span class="skill-tag">Firebase Auth</span>
           <span class="skill-tag">Android SDK</span>
           <span class="skill-tag">Google Maps API</span>
+          <span class="skill-tag">TensorFlow</span>
+          <span class="skill-tag">Flask</span>
+          <span class="skill-tag">Machine Learning</span>
+          <span class="skill-tag">Deep Learning</span>
         </div>
       </div>
       <div class="skill-card reveal">
@@ -964,6 +978,43 @@ footer span{color:var(--indigo)}
             <a href="https://github.com/MaryadaSharma06/Zephyr-Campus-Navigation/tree/51a863258a0ce7f3fa89f324d84ea3c486e0e0a7" class="btn-gh">GitHub</a>
           </div>
         </div>
+
+        <div class="project-card reveal">
+  <h3 class="project-name" style="font-size:1.3rem">Plant Disease Detection AI</h3>
+
+  <p style="color:var(--indigo);font-size:.82rem;margin-bottom:.75rem;font-weight:600">
+    Deep Learning + Generative AI
+  </p>
+
+  <p class="project-desc">
+    AI-powered web application that detects plant leaf diseases across 38 classes
+    using a Convolutional Neural Network (CNN). Features disease analysis cards,
+    confidence scoring, top predictions, and an AI treatment assistant powered by Groq.
+  </p>
+
+  <div class="project-stack" style="margin-bottom:1.25rem">
+    <span class="stack-tag">Python</span>
+    <span class="stack-tag">TensorFlow</span>
+    <span class="stack-tag">CNN</span>
+    <span class="stack-tag">Flask</span>
+    <span class="stack-tag">Groq API</span>
+    <span class="stack-tag">HTML/CSS</span>
+  </div>
+
+  <div class="project-links">
+    <a href="https://plant-disease-detection-system-oytk.onrender.com"
+       class="btn-demo"
+       target="_blank">
+       Live Demo ↗
+    </a>
+
+    <a href="https://github.com/MaryadaSharma06/Plant-Disease-Detection-System"
+       class="btn-gh"
+       target="_blank">
+       GitHub
+    </a>
+  </div>
+</div>
 
         <div class="project-card reveal">
           <h3 class="project-name" style="font-size:1.3rem">Desktop DB System</h3>
@@ -1122,7 +1173,7 @@ footer span{color:var(--indigo)}
 
 <!-- ═══ FOOTER ═══ -->
 <footer>
-  <p>Maryada Sharma <span>©</span> 2026 — Built with <span>React</span>, <span>Tailwind CSS</span>, and <span>Framer Motion</span></p>
+ <p>Maryada Sharma <span>©</span> 2026 — Built with <span>HTML</span>, <span>CSS</span>, and <span>JavaScript</span></p>
   <p style="margin-top:.5rem;font-size:.75rem;color:rgba(100,116,139,.5)">Designed &amp; developed with ❤️ in India</p>
 </footer>
 
