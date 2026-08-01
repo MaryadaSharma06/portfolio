@@ -579,6 +579,7 @@ section{position:relative;z-index:2}
 .ach-text{font-size:.9rem;color:#94a3b8;line-height:1.5}
 
 /* ───────── CERTIFICATES ───────── */
+/* Certificates */
 
 #certificates{
     background:var(--bg2);
@@ -586,7 +587,7 @@ section{position:relative;z-index:2}
 
 .cert-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(360px,1fr));
     gap:2rem;
 }
 
@@ -594,58 +595,41 @@ section{position:relative;z-index:2}
     background:var(--glass);
     border:1px solid var(--border);
     border-radius:18px;
-    overflow:hidden;
-    backdrop-filter:blur(12px);
+    padding:1.5rem;
     transition:.3s;
 }
 
 .cert-card:hover{
     transform:translateY(-8px);
     border-color:var(--indigo);
-    box-shadow:0 18px 40px rgba(99,102,241,.18);
-}
-
-.cert-card img{
-    width:100%;
-    height:220px;
-    object-fit:cover;
-}
-
-.cert-content{
-    padding:1.5rem;
+    box-shadow:0 20px 45px rgba(99,102,241,.2);
 }
 
 .cert-title{
     font-family:var(--font-display);
     font-size:1.2rem;
-    font-weight:700;
-    margin-bottom:.5rem;
+    margin-bottom:.4rem;
 }
 
 .cert-org{
-    color:var(--indigo);
-    font-weight:600;
-    margin-bottom:.4rem;
+    color:var(--cyan);
+    margin-bottom:.3rem;
 }
 
 .cert-date{
     color:var(--muted);
-    font-size:.85rem;
     margin-bottom:1rem;
 }
 
-.cert-btn{
-    display:inline-block;
-    padding:.6rem 1.3rem;
-    border-radius:8px;
-    background:linear-gradient(135deg,var(--indigo),var(--indigo-dim));
-    color:white;
-    font-weight:600;
+.certificate-image{
+    width:100%;
+    border-radius:10px;
+    border:1px solid rgba(255,255,255,.08);
     transition:.3s;
 }
 
-.cert-btn:hover{
-    transform:translateY(-2px);
+.cert-card:hover .certificate-image{
+    transform:scale(1.02);
 }
 /* ── CONTACT ── */
 #contact{background:var(--bg2)}
@@ -1139,8 +1123,10 @@ footer span{color:var(--indigo)}
       <div class="edu-card reveal">
         <div class="edu-degree">B.Tech Computer Science Engineering</div>
         <div class="edu-inst">BML Munjal University, Gurugram</div>
-        <div class="edu-score">7.35</div>
-        <div class="edu-score-label">CGPA</div>
+       <div class="edu-year">2023 – 2027</div>
+       <div class="edu-score-label">
+        Computer Science Engineering
+       </div>
         <div class="edu-year">2023 – 2027</div>
       </div>
       <div class="edu-card reveal">
@@ -1161,7 +1147,7 @@ footer span{color:var(--indigo)}
   </div>
 </section>
 
-  <section id="certificates">
+<section id="certificates">
 
 <div class="section-inner">
 
@@ -1177,94 +1163,54 @@ Professional Learning
 
 <div class="cert-grid">
 
-<!-- Certificate 1 -->
-
 <div class="cert-card reveal">
 
-<img src="genai-studio-certificate.png"
-alt="Introduction to Generative AI Studio">
-
-<div class="cert-content">
-
-<div class="cert-title">
+<h3 class="cert-title">
 Introduction to Generative AI Studio
-</div>
+</h3>
 
-<div class="cert-org">
-Simplilearn
-</div>
+<p class="cert-org">Simplilearn</p>
 
-<div class="cert-date">
-Issued August 2026
-</div>
+<p class="cert-date">Issued Aug 2026</p>
 
-<a href="YOUR_CERTIFICATE_LINK"
-target="_blank"
-class="cert-btn">
-View Certificate
-</a>
+<img src="images/genai-studio.png"
+     alt="Generative AI Studio Certificate"
+     class="certificate-image">
 
 </div>
-</div>
 
-<!-- Certificate 2 -->
 
 <div class="cert-card reveal">
 
-<img src="google-cloud-certificate.png"
-alt="Gen AI Beyond the Chatbot">
-
-<div class="cert-content">
-
-<div class="cert-title">
+<h3 class="cert-title">
 Gen AI: Beyond the Chatbot
-</div>
+</h3>
 
-<div class="cert-org">
-Google Cloud
-</div>
+<p class="cert-org">Google Cloud</p>
 
-<div class="cert-date">
-Issued July 2026
-</div>
+<p class="cert-date">Issued Jul 2026</p>
 
-<a href="YOUR_GOOGLE_CREDENTIAL_LINK"
-target="_blank"
-class="cert-btn">
-View Credential
-</a>
+<img src="images/google-cloud.png"
+     alt="Google Cloud Certificate"
+     class="certificate-image">
 
 </div>
-</div>
 
-<!-- Certificate 3 -->
 
 <div class="cert-card reveal">
 
-<img src="iot-security-certificate.png"
-alt="IoT Security">
-
-<div class="cert-content">
-
-<div class="cert-title">
+<h3 class="cert-title">
 IoT Security: Interface and Data Security
-</div>
+</h3>
 
-<div class="cert-org">
-CertNexus
-</div>
+<p class="cert-org">CertNexus</p>
 
-<div class="cert-date">
-Issued March 2026
-</div>
+<p class="cert-date">Issued Mar 2026</p>
 
-<a href="YOUR_CERTNEXUS_LINK"
-target="_blank"
-class="cert-btn">
-View Credential
-</a>
+<img src="images/iot-security.png"
+     alt="IoT Security Certificate"
+     class="certificate-image">
 
-</div>
 </div>
 
 </div>
