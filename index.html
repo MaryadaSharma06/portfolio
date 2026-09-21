@@ -1536,72 +1536,227 @@ window.addEventListener('scroll',()=>{
 <script>
     emailjs.init("saOMwhQQKtoT2pSBL");
 </script>
-  <script>
+<!-- ═══ LEETCODE LIVE STATS ═══ -->
+<script>
 async function loadLeetCodeStats() {
+
     const username = "maryada_sharma20";
 
+    // Default values in case the API is temporarily unavailable
+    const fallback = {
+        solved: 205,
+        rating: 1490,
+        contests: 2,
+        submissions: 362
+    };
+
+    const solvedEl = document.getElementById("leetcode-solved");
+    const ratingEl = document.getElementById("leetcode-rating");
+    const contestsEl = document.getElementById("leetcode-contests");
+    const submissionsEl = document.getElementById("leetcode-submissions");
+
     try {
-        const [profileRes, solvedRes, contestRes] = await Promise.all([
-            fetch(`https://leetcode-api-pied.vercel.app/user/${username}`),
-            fetch(`https://leetcode-api-pied.vercel.app/user/${username}/solved`),
-            fetch(`https://leetcode-api-pied.vercel.app/user/${username}/contests`)
-        ]);
 
-        const profile = await profileRes.json();
-        const solved = await solvedRes.json();
-        const contests = await contestRes.json();
+        /* -------------------------------------------------
+           1. GET SOLVED PROBLEMS
+           ------------------------------------------------- */
 
-        // Problems solved
-        const solvedCount =
-            solved.solvedProblem ||
-            solved.totalSolved ||
-            solved.solved ||
-            0;
+        const solvedResponse = await fetch(
+            `https://leetpulse-api.vercel.app/api/leetcode/solved/${username}`,
+            {
+                cache: "no-store"
+            }
+        );
 
-        document.getElementById("leetcode-solved").textContent = solvedCount;
+        if (!solvedResponse.ok) {
+            throw new Error("Solved API request failed");
+        }
 
-        // Contest rating
-        const rating =
-            profile.contestRating ||
-            contests.contestRating ||
-            contests.rating ||
-            0;
+        const solvedData = await solvedResponse.json();
 
-        document.getElementById("leetcode-rating").textContent =
-            Math.round(rating);
+        console.log("LeetCode Solved Data:", solvedData);
 
-        // Contest participation
-        const contestCount =
-            contests.contestAttend ||
-            contests.contestAttended ||
-            contests.attended ||
-            contests.length ||
-            0;
 
-        document.getElementById("leetcode-contests").textContent =
-            contestCount;
+        /* -------------------------------------------------
+           2. GET CONTEST DATA
+           ------------------------------------------------- */
 
-        // Submissions, if available
-        const submissions =
-            profile.totalSubmissions ||
-            profile.submissions ||
-            0;
+        const contestResponse = await fetch(
+            `https://leetpulse-api.vercel.app/api/leetcode/contest/${username}`,
+            {
+                cache: "no-store"
+            }
+        );
 
-        document.getElementById("leetcode-submissions").textContent =
-            submissions;
+        if (!contestResponse.ok) {
+            throw new Error("Contest API request failed");
+        }
 
-    } catch (error) {
-        console.error("Failed to load LeetCode stats:", error);
+        const contestData = await contestResponse.json();
 
-        // Fallback values
-        document.getElementById("leetcode-solved").textContent = "205";
-        document.getElementById("leetcode-rating").textContent = "1490";
-        document.getElementById("leetcode-contests").textContent = "2";
-        document.getElementById("leetcode-submissions").textContent = "362";
+        console.log("LeetCode Contest Data:", contestData);
+
+
+        /* -------------------------------------------------
+           3. GET SUBMISSION DATA
+           ------------------------------------------------- */
+
+        const submissionResponse = await fetch(
+            `https://leetpulse-api.vercel.app/api/leetcode/submission/${username}?limit=100`,
+            {
+                cache: "no-store"
+            }
+        );
+
+        let submissionData = [];
+
+        if (submissionResponse.ok) {
+            submissionData = await submissionResponse.json();
+        }
+
+        console.log("LeetCode Submission Data:", submissionData);
+
+
+        /* -------------------------------------------------
+           4. SOLVED PROBLEMS
+           ------------------------------------------------- */
+
+        let solvedCount = Number(solvedData.solvedProblem);
+
+        if (!Number.isFinite(solvedCount)) {
+            solvedCount = fallback.solved;
+        }
+
+        solvedEl.textContent = solvedCount;
+
+
+        /* -------------------------------------------------
+           5. CONTEST RATING
+           ------------------------------------------------- */
+
+        let rating = Number(contestData.contestRating);
+
+        if (!Number.isFinite(rating)) {
+            rating = fallback.rating;
+        }
+
+        ratingEl.textContent = Math.round(rating);
+
+
+        /* -------------------------------------------------
+           6. CONTEST COUNT
+           ------------------------------------------------- */
+
+        let contestCount = 0;
+
+        if (Array.isArray(contestData.contestHistory)) {
+            contestCount = contestData.contestHistory.length;
+        }
+        else if (Array.isArray(contestData.contestAttend)) {
+            contestCount = contestData.contestAttend.length;
+        }
+        else if (Number.isFinite(Number(contestData.contestAttend))) {
+            contestCount = Number(contestData.contestAttend);
+        }
+        else if (Array.isArray(contestData)) {
+            contestCount = contestData.length;
+        }
+
+        // If API does not provide the count, keep your known value
+        if (!contestCount) {
+            contestCount = fallback.contests;
+        }
+
+        contestsEl.textContent = contestCount;
+
+
+        /* -------------------------------------------------
+           7. SUBMISSIONS
+           ------------------------------------------------- */
+
+        /*
+           The submission endpoint returns submission records,
+           not a single number.
+
+           Therefore we DO NOT do:
+
+           submissions = submissionData
+
+           because that creates [object Object].
+
+           Instead we count the returned submission records.
+        */
+
+        let submissionCount = 0;
+
+        if (Array.isArray(submissionData)) {
+
+            submissionCount = submissionData.length;
+
+        }
+        else if (Array.isArray(submissionData.submissions)) {
+
+            submissionCount = submissionData.submissions.length;
+
+        }
+        else if (Array.isArray(submissionData.data)) {
+
+            submissionCount = submissionData.data.length;
+
+        }
+
+        /*
+           The endpoint may only return the most recent submissions,
+           so don't overwrite your 362+ historical number with
+           something like 20.
+        */
+
+        if (submissionCount < fallback.submissions) {
+            submissionCount = fallback.submissions;
+        }
+
+        submissionsEl.textContent = submissionCount;
+
+
+        console.log("Final LeetCode Stats:", {
+            solved: solvedCount,
+            rating: rating,
+            contests: contestCount,
+            submissions: submissionCount
+        });
+
+    }
+
+    catch (error) {
+
+        console.error(
+            "Failed to load LeetCode statistics:",
+            error
+        );
+
+        /*
+           If the API fails, your portfolio still shows
+           your last known stats instead of breaking.
+        */
+
+        solvedEl.textContent = fallback.solved;
+        ratingEl.textContent = fallback.rating;
+        contestsEl.textContent = fallback.contests;
+        submissionsEl.textContent = fallback.submissions;
     }
 }
 
+
+/* Load stats when page opens */
 loadLeetCodeStats();
+
+
+/*
+   Refresh statistics every 10 minutes while the
+   portfolio is open.
+*/
+setInterval(loadLeetCodeStats, 10 * 60 * 1000);
+
 </script>
 </body>
 </html>
