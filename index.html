@@ -1299,43 +1299,33 @@ IoT Security: Interface and Data Security
 
     <div class="ach-grid">
 
-      <!-- LeetCode Problems -->
-      <div class="ach-card reveal">
-        <div class="ach-icon">💻</div>
-        <div class="ach-text">
-          <strong>205+ LeetCode Problems Solved</strong><br>
-          Strengthened problem-solving and Data Structures &amp; Algorithms
-          skills through consistent coding practice.
-        </div>
-      </div>
+<!-- LeetCode Problems -->
+<div class="ach-card reveal">
+    <div class="ach-icon">💻</div>
+    <div class="ach-text">
+        <strong><span id="leetcode-solved">--</span>+ LeetCode Problems</strong><br>
+        Strengthening problem-solving and Data Structures &amp; Algorithms skills
+        through consistent coding practice.
+    </div>
+</div>
 
-      <!-- Contest Rating -->
-      <div class="ach-card reveal">
-        <div class="ach-icon">🏆</div>
-        <div class="ach-text">
-          <strong>LeetCode Contest Rating — 1490</strong><br>
-          Participated in LeetCode contests and achieved a contest rating of 1490.
-        </div>
-      </div>
+<!-- LeetCode Contest -->
+<div class="ach-card reveal">
+    <div class="ach-icon">🏆</div>
+    <div class="ach-text">
+        <strong>LeetCode Contest — Rating <span id="leetcode-rating">--</span></strong><br>
+        Participated in <span id="leetcode-contests">--</span> coding contests.
+    </div>
+</div>
 
-      <!-- Contests -->
-      <div class="ach-card reveal">
-        <div class="ach-icon">⚡</div>
-        <div class="ach-text">
-          <strong>Participated in 2 LeetCode Contests</strong><br>
-          Gained competitive programming experience through timed coding contests.
-        </div>
-      </div>
-
-      <!-- Active Coding -->
-      <div class="ach-card reveal">
-        <div class="ach-icon">🔥</div>
-        <div class="ach-text">
-          <strong>362+ Submissions in the Past Year</strong><br>
-          Maintained consistent coding practice across algorithmic problem-solving.
-        </div>
-      </div>
-
+<!-- LeetCode Submissions -->
+<div class="ach-card reveal">
+    <div class="ach-icon">🔥</div>
+    <div class="ach-text">
+        <strong><span id="leetcode-submissions">--</span>+ Submissions</strong><br>
+        Consistent coding practice across algorithmic problem-solving.
+    </div>
+</div>
       <!-- Certifications -->
       <div class="ach-card reveal">
         <div class="ach-icon">🎓</div>
@@ -1545,6 +1535,73 @@ window.addEventListener('scroll',()=>{
 
 <script>
     emailjs.init("saOMwhQQKtoT2pSBL");
+</script>
+  <script>
+async function loadLeetCodeStats() {
+    const username = "maryada_sharma20";
+
+    try {
+        const [profileRes, solvedRes, contestRes] = await Promise.all([
+            fetch(`https://leetcode-api-pied.vercel.app/user/${username}`),
+            fetch(`https://leetcode-api-pied.vercel.app/user/${username}/solved`),
+            fetch(`https://leetcode-api-pied.vercel.app/user/${username}/contests`)
+        ]);
+
+        const profile = await profileRes.json();
+        const solved = await solvedRes.json();
+        const contests = await contestRes.json();
+
+        // Problems solved
+        const solvedCount =
+            solved.solvedProblem ||
+            solved.totalSolved ||
+            solved.solved ||
+            0;
+
+        document.getElementById("leetcode-solved").textContent = solvedCount;
+
+        // Contest rating
+        const rating =
+            profile.contestRating ||
+            contests.contestRating ||
+            contests.rating ||
+            0;
+
+        document.getElementById("leetcode-rating").textContent =
+            Math.round(rating);
+
+        // Contest participation
+        const contestCount =
+            contests.contestAttend ||
+            contests.contestAttended ||
+            contests.attended ||
+            contests.length ||
+            0;
+
+        document.getElementById("leetcode-contests").textContent =
+            contestCount;
+
+        // Submissions, if available
+        const submissions =
+            profile.totalSubmissions ||
+            profile.submissions ||
+            0;
+
+        document.getElementById("leetcode-submissions").textContent =
+            submissions;
+
+    } catch (error) {
+        console.error("Failed to load LeetCode stats:", error);
+
+        // Fallback values
+        document.getElementById("leetcode-solved").textContent = "205";
+        document.getElementById("leetcode-rating").textContent = "1490";
+        document.getElementById("leetcode-contests").textContent = "2";
+        document.getElementById("leetcode-submissions").textContent = "362";
+    }
+}
+
+loadLeetCodeStats();
 </script>
 </body>
 </html>
