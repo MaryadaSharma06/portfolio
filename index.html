@@ -911,200 +911,178 @@ footer span{color:var(--indigo)}
   </div>
 </section>
 
-<!-- ═══ PROJECTS ═══ -->
+
 <section id="projects">
-  <div class="section-inner">
-    <p class="section-label reveal">Case studies &amp; explorations</p>
-    <h2 class="section-title reveal"><span class="grad">Selected Design Work</span></h2>
-    <div class="section-divider reveal"></div>
+  <div class="container">
+    <div class="section-heading">
+      <p class="section-label">Selected work</p>
+      <h2>Projects & case studies.</h2>
+      <p class="section-intro">
+        Exploring user needs, interface design, information hierarchy,
+        and thoughtful digital experiences.
+      </p>
+    </div>
 
-    <div class="projects-grid">
-      <!-- Featured -->
-      <div class="project-featured reveal">
-        <div>
-          <div class="project-badge">✦ Product Design Case Study</div>
-          <h3 class="project-name">StudyScribe</h3>
-          <p class="project-desc">A smart study assistant concept that brings notes, AI-supported summaries, flashcards, and quizzes into one learning workflow. This project can be presented as a product design exploration alongside the working application.</p>
-          <div class="project-features">
-            <span class="feature-chip">AI Summaries</span>
-            <span class="feature-chip">Flashcards</span>
-            <span class="feature-chip">Quiz Timer</span>
-            <span class="feature-chip">Audio Output</span>
-            <span class="feature-chip">Notes Generation</span>
-          </div>
-          <div class="project-stack">
-            <span class="stack-tag">React.js</span>
-            <span class="stack-tag">Node.js</span>
-            <span class="stack-tag">Express.js</span>
-            <span class="stack-tag">Groq API</span>
-            <span class="stack-tag">Whisper</span>
-            <span class="stack-tag">gTTS</span>
-          </div>
-          <div class="project-links">
-            <a href="https://study-scribe-xi.vercel.app" class="btn-demo" target="_blank" rel="noopener">View Product ↗</a>
-            <a href="https://github.com/MaryadaSharma06/StudyScribe" class="btn-gh" target="_blank" rel="noopener">View Build ↗</a>
-          </div>
-        </div>
-          
-         <div class="project-preview">
-    <img
-        src="StudyScribe.png"
-        alt="StudyScribe Project"
-        class="project-image"
-    />
-</div>
-          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:.35;pointer-events:none">
-</div>
-        </div>
-      </div>
+    <div class="project-grid">
 
-      <!-- Two small cards -->
-      <div class="projects-row">
-        <div class="project-card reveal">
-          <div class="project-badge">✦ UX Case Study</div>
-          <h3 class="project-name" style="font-size:1.3rem">Zephyr</h3>
-          <p style="color:var(--indigo);font-size:.82rem;margin-bottom:.75rem;font-weight:600">Campus Navigation System</p>
-          <p class="project-desc">A campus-navigation concept focused on helping students and visitors find university facilities. The case study covers the problem, target audience, competitor analysis, and design process.</p>
-          <div class="project-stack" style="margin-bottom:1.25rem">
-            <span class="stack-tag">HTML</span>
-            <span class="stack-tag">CSS</span>
-            <span class="stack-tag">JavaScript</span>
-            <span class="stack-tag">Google Maps API</span>
+      <!-- PROJECT 1: ZEPHYR -->
+      <article class="project">
+        <div class="project-content">
+          <span class="project-number">Case Study · 01</span>
+          <h3>Zephyr</h3>
+
+          <p class="project-description">
+            A campus navigation platform concept designed to help students
+            and visitors find university buildings and facilities more easily.
+          </p>
+
+          <h4>Design focus</h4>
+          <ul>
+            <li>Campus discovery and location search</li>
+            <li>Information hierarchy and navigation flow</li>
+            <li>Clear presentation of campus facilities</li>
+            <li>Accessible destination information</li>
+          </ul>
+
+          <div class="project-tags">
+            <span>UX Design</span>
+            <span>UI Design</span>
+            <span>Figma</span>
+            <span>Campus Navigation</span>
           </div>
-          <div class="project-links">
-            <a href="https://www.figma.com/design/roRqWIN3vmZJWLt3z0Ce1V/Zephyr_CaseStudy?node-id=0-1" target="_blank" rel="noopener" class="btn-demo">Figma Case Study ↗</a>
-            <a href="zephyr-demo.mp4" target="_blank" class="btn-gh">
-             Demo ↗
-           </a>
-            <a href="https://github.com/MaryadaSharma06/Zephyr-Campus-Navigation/tree/51a863258a0ce7f3fa89f324d84ea3c486e0e0a7" class="btn-gh">GitHub</a>
+
+          <div class="project-actions">
+            <a class="button button-primary"
+               href="https://www.figma.com/design/NxdzJFYZIE99fC6PWnRWUu/zephyr_ui"
+               target="_blank" rel="noopener noreferrer">
+              View UI Design ↗
+            </a>
+
+            <a class="button button-secondary"
+               href="https://www.figma.com/design/roRqWIN3vmZJWLt3z0Ce1V/Zephyr_CaseStudy"
+               target="_blank" rel="noopener noreferrer">
+              View Case Study ↗
+            </a>
           </div>
         </div>
 
-        <div class="project-card reveal">
-  <h3 class="project-name" style="font-size:1.3rem">Plant Disease Detection AI</h3>
-
-  <p style="color:var(--indigo);font-size:.82rem;margin-bottom:.75rem;font-weight:600">
-    Deep Learning + Generative AI
-  </p>
-
-  <p class="project-desc">
-    AI-powered web application that detects plant leaf diseases across 38 classes
-    using a Convolutional Neural Network (CNN). Features disease analysis cards,
-    confidence scoring, top predictions, and an AI treatment assistant powered by Groq.
-  </p>
-
-  <div class="project-stack" style="margin-bottom:1.25rem">
-    <span class="stack-tag">Python</span>
-    <span class="stack-tag">TensorFlow</span>
-    <span class="stack-tag">CNN</span>
-    <span class="stack-tag">Flask</span>
-    <span class="stack-tag">Groq API</span>
-    <span class="stack-tag">HTML/CSS</span>
-  </div>
-
-  <div class="project-links">
-    <a href="https://plant-disease-detection-system-oytk.onrender.com"
-       class="btn-demo"
-       target="_blank">
-       Live Demo ↗
-    </a>
-
-    <a href="https://github.com/MaryadaSharma06/Plant-Disease-Detection-System"
-       class="btn-gh"
-       target="_blank">
-       GitHub
-    </a>
-  </div>
-</div>
-
-<div class="project-card reveal">
-    <h3 class="project-name" style="font-size:1.3rem">
-        Intelligent Traffic Light Optimization
-    </h3>
-
-    <p style="color:var(--indigo);font-size:.82rem;margin-bottom:.75rem;font-weight:600">
-        Computer Vision + Intelligent Traffic Control
-    </p>
-
-    <p class="project-desc">
-        AI-based traffic optimization system that detects and tracks vehicles,
-        predicts traffic conditions, and dynamically adjusts signal timing to
-        improve traffic flow.
-    </p>
-
-    <div class="project-stack" style="margin-bottom:1.25rem">
-        <span class="stack-tag">Python</span>
-        <span class="stack-tag">YOLOv3</span>
-        <span class="stack-tag">OpenCV</span>
-        <span class="stack-tag">NumPy</span>
-        <span class="stack-tag">Fuzzy Logic</span>
-        <span class="stack-tag">Q-Learning</span>
-        <span class="stack-tag">Pygame</span>
-    </div>
-
-    <div class="project-links">
-        <a href="https://github.com/MaryadaSharma06/intelligent-traffic-light-optimization.git"
-           class="btn-gh"
-           target="_blank">
-            GitHub
-        </a>
-    </div>
-</div>
-
-<div class="project-card reveal">
-    <h3 class="project-name" style="font-size:1.3rem">
-        BSE Stock Market Analytics Dashboard
-    </h3>
-
-    <p style="color:var(--indigo);font-size:.82rem;margin-bottom:.75rem;font-weight:600">
-        Financial Analytics + Time Series
-    </p>
-
-    <p class="project-desc">
-        Stock market analytics project analyzing BSE-listed stocks using
-        statistical analysis and time-series models to study returns,
-        correlations, volatility, and market behavior.
-    </p>
-
-    <div class="project-stack" style="margin-bottom:1.25rem">
-        <span class="stack-tag">Python</span>
-        <span class="stack-tag">Pandas</span>
-        <span class="stack-tag">NumPy</span>
-        <span class="stack-tag">yFinance</span>
-        <span class="stack-tag">Statsmodels</span>
-        <span class="stack-tag">ARIMA</span>
-        <span class="stack-tag">GARCH</span>
-        <span class="stack-tag">Matplotlib</span>
-    </div>
-
-    <div class="project-links">
-        <a href="https://github.com/MaryadaSharma06/BSE-DATA-ANALYTICS-DASHBOARD"
-           class="btn-gh"
-           target="_blank">
-            GitHub
-        </a>
-    </div>
-</div>
-
-        <div class="project-card reveal">
-          <h3 class="project-name" style="font-size:1.3rem">Desktop DB System</h3>
-          <p style="color:var(--indigo);font-size:.82rem;margin-bottom:.75rem;font-weight:600">Python + MySQL Application</p>
-          <p class="project-desc">A desktop application supporting complete CRUD operations and structured record management with a clean database-driven interface.</p>
-          <div class="project-stack" style="margin-bottom:1.25rem">
-            <span class="stack-tag">Python</span>
-            <span class="stack-tag">MySQL</span>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/MaryadaSharma06" class="btn-gh">GitHub</a>
+        <div class="project-visual">
+          <div class="visual-placeholder">
+            <div class="symbol">📍</div>
+            <strong>Zephyr — Campus Navigation</strong>
+            <p>
+              Explore the interface and UX case study in Figma.
+            </p>
           </div>
         </div>
-      </div>
+      </article>
+
+      <!-- PROJECT 2: SUPER ADMIN PORTAL -->
+      <article class="project">
+        <div class="project-content">
+          <span class="project-number">Dashboard Design · 02</span>
+          <h3>Super Admin Portal</h3>
+
+          <p class="project-description">
+            Administrative dashboard design work associated with my
+            UI/UX internship experience at RannLab Technologies.
+          </p>
+
+          <h4>Design focus</h4>
+          <ul>
+            <li>Dashboard layout and information hierarchy</li>
+            <li>Organized administrative workflows</li>
+            <li>Consistent components and visual patterns</li>
+            <li>Clear presentation of management information</li>
+          </ul>
+
+          <div class="project-tags">
+            <span>Dashboard UI</span>
+            <span>Figma</span>
+            <span>Design Systems</span>
+            <span>Admin Interface</span>
+          </div>
+
+          <div class="project-actions">
+            <a class="button button-primary"
+               href="https://www.figma.com/design/6Uzg1tU354g4VtYDhdYlU2/Super-admin"
+               target="_blank" rel="noopener noreferrer">
+              View Admin Portal ↗
+            </a>
+          </div>
+
+          <p class="project-description" style="margin-top:16px;font-size:.82rem">
+            Share only designs you personally contributed to and are
+            authorized to disclose.
+          </p>
+        </div>
+
+        <div class="project-visual">
+          <div class="visual-placeholder">
+            <div class="symbol">▦</div>
+            <strong>Super Admin Portal</strong>
+            <p>
+              Explore the dashboard design and interface screens in Figma.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <!-- PROJECT 3: STUDYSCRIBE -->
+      <article class="project">
+        <div class="project-content">
+          <span class="project-number">Product Project · 03</span>
+          <h3>StudyScribe</h3>
+
+          <p class="project-description">
+            An AI-powered study assistant that helps students work with
+            learning materials and generate structured revision resources.
+          </p>
+
+          <h4>Product experience</h4>
+          <ul>
+            <li>Organizing study materials</li>
+            <li>AI-assisted summaries and notes</li>
+            <li>Quiz and flashcard workflows</li>
+            <li>Combining study tools in one application</li>
+          </ul>
+
+          <div class="project-tags">
+            <span>Product Thinking</span>
+            <span>Student Experience</span>
+            <span>React</span>
+            <span>AI Integration</span>
+          </div>
+
+          <div class="project-actions">
+            <a class="button button-primary"
+               href="https://study-scribe-xi.vercel.app/"
+               target="_blank" rel="noopener noreferrer">
+              Explore Project ↗
+            </a>
+
+            <a class="button button-secondary"
+               href="https://github.com/MaryadaSharma06/StudyScribe"
+               target="_blank" rel="noopener noreferrer">
+              Source Code ↗
+            </a>
+          </div>
+        </div>
+
+        <div class="project-visual study-visual">
+          <div class="visual-placeholder">
+            <div class="symbol">✦</div>
+            <strong>StudyScribe — Smart Study Assistant</strong>
+            <p>
+              Explore the application and its study workflows.
+            </p>
+          </div>
+        </div>
+      </article>
+
     </div>
   </div>
 </section>
-
-<!-- Portfolio note: case-study framing -->
-<section id="approach" style="background:var(--bg2)"><div class="section-inner"><p class="section-label reveal">How I approach design</p><h2 class="section-title reveal"><span class="grad">From problem to interface</span></h2><div class="section-divider reveal"></div><div class="skills-grid"><div class="skill-card reveal"><div class="skill-card-title"><div class="skill-icon">01</div>Understand</div><p class="project-desc">Clarify the problem, intended users, and the task the product should help them complete.</p></div><div class="skill-card reveal"><div class="skill-card-title"><div class="skill-icon">02</div>Structure</div><p class="project-desc">Organize information into a clear hierarchy and map the main user journey before polishing visuals.</p></div><div class="skill-card reveal"><div class="skill-card-title"><div class="skill-icon">03</div>Design</div><p class="project-desc">Create consistent screens with deliberate typography, spacing, color, and reusable components.</p></div><div class="skill-card reveal"><div class="skill-card-title"><div class="skill-icon">04</div>Refine</div><p class="project-desc">Review the flow for clarity, accessibility, and responsive behavior; iterate where the experience feels confusing.</p></div></div><p style="color:var(--muted);font-size:.82rem;line-height:1.7;margin-top:1.25rem">This describes my intended design approach; project-specific research, testing, and outcomes are included only where I have actually completed them.</p></div></section>
 
 <!-- ═══ EXPERIENCE ═══ -->
 <section id="experience">
