@@ -762,6 +762,17 @@ footer span{color:var(--indigo)}
 }
 #toast.show{transform:translateY(0);opacity:1}
 #toast .t-icon{color:#10b981;font-size:1.2rem}
+
+/* Beyond the Interface artwork card */
+.artwork-card{max-width:760px;margin:0 auto;background:var(--card, #10131d);border:1px solid var(--border, rgba(129,140,248,.18));border-radius:18px;overflow:hidden;box-shadow:0 16px 45px rgba(0,0,0,.18)}
+.artwork-image-link{display:block;padding:8px 8px 0;line-height:0}
+.artwork-image{display:block;width:100%;height:260px;object-fit:cover;object-position:center 43%;border-radius:12px;background:#08090d}
+.artwork-copy{padding:18px 20px 22px}
+.artwork-title{font-family:var(--font-display);font-size:1.2rem;line-height:1.3;margin:0 0 12px;color:var(--text, #f3f4f6)}
+.artwork-subtitle{font-size:.9rem;color:var(--muted, #929bad);margin:0 0 14px}
+.artwork-description{font-size:1rem;line-height:1.7;color:var(--text, #f3f4f6);margin:0 0 18px}
+@media(max-width:600px){.artwork-image{height:220px}.artwork-copy{padding:16px}.artwork-description{font-size:.95rem}}
+
 </style>
 </head>
 <body>
@@ -1142,6 +1153,25 @@ footer span{color:var(--indigo)}
   </div>
 </section>
 
+<!-- ═══ ARTWORK ═══ -->
+<section id="artwork" style="background:var(--bg)">
+  <div class="section-inner">
+    <p class="section-label reveal">Beyond the interface</p>
+    <div class="section-divider reveal"></div>
+    <div class="artwork-card reveal">
+      <a class="artwork-image-link" href="https://www.instagram.com/artist_maryada06/" target="_blank" rel="noopener noreferrer" aria-label="View Artist Maryada on Instagram">
+        <img class="artwork-image" src="artist_maryada_joker_art.jpg" alt="Portrait illustration from Artist Maryada's art Instagram profile" loading="lazy">
+      </a>
+      <div class="artwork-copy">
+        <h2 class="artwork-title">Beyond the Interface</h2>
+        <p class="artwork-subtitle">Creative practice · Illustration · Visual storytelling</p>
+        <p class="artwork-description">A glimpse into my artistic side through portrait illustrations, colour exploration, and traditional artwork. Creating art helps me develop a stronger eye for composition, contrast, and visual detail.</p>
+        <a href="https://www.instagram.com/artist_maryada06/" target="_blank" rel="noopener noreferrer" class="btn-demo">View My Artwork ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Portfolio note: case-study framing -->
 <section id="approach" style="background:var(--bg2)"><div class="section-inner"><p class="section-label reveal">How I approach design</p><h2 class="section-title reveal"><span class="grad">From problem to interface</span></h2><div class="section-divider reveal"></div><div class="skills-grid"><div class="skill-card reveal"><div class="skill-card-title"><div class="skill-icon">01</div>Understand</div><p class="project-desc">Clarify the problem, intended users, and the task the product should help them complete.</p></div><div class="skill-card reveal"><div class="skill-card-title"><div class="skill-icon">02</div>Structure</div><p class="project-desc">Organize information into a clear hierarchy and map the main user journey before polishing visuals.</p></div><div class="skill-card reveal"><div class="skill-card-title"><div class="skill-icon">03</div>Design</div><p class="project-desc">Create consistent screens with deliberate typography, spacing, color, and reusable components.</p></div><div class="skill-card reveal"><div class="skill-card-title"><div class="skill-icon">04</div>Refine</div><p class="project-desc">Review the flow for clarity, accessibility, and responsive behavior; iterate where the experience feels confusing.</p></div></div><p style="color:var(--muted);font-size:.82rem;line-height:1.7;margin-top:1.25rem">This describes my intended design approach; project-specific research, testing, and outcomes are included only where I have actually completed them.</p></div></section>
 
@@ -1346,35 +1376,6 @@ IoT Security: Interface and Data Security
         </div>
       </div>
 
-    </div>
-  </div>
-</section>
-
-<!-- ═══ ARTWORK ═══ -->
-<section id="artwork" style="background:var(--bg)">
-  <div class="section-inner">
-    <p class="section-label reveal">Beyond the interface</p>
-    <h2 class="section-title reveal"><span class="grad">Art &amp; Illustration</span></h2>
-    <div class="section-divider reveal"></div>
-    <div class="project-featured reveal" style="grid-template-columns:1fr auto;gap:2rem;align-items:center">
-      <div>
-        <div class="project-badge">✦ Personal Creative Portfolio</div>
-        <h3 class="project-name">Artist Maryada</h3>
-        <p class="project-desc">Alongside digital design, I enjoy creating traditional artwork and portrait illustrations. This creative practice lets me explore colour, composition, contrast, and visual storytelling beyond the screen.</p>
-        <div class="project-features">
-          <span class="feature-chip">Portrait Illustration</span>
-          <span class="feature-chip">Colour &amp; Contrast</span>
-          <span class="feature-chip">Visual Storytelling</span>
-        </div>
-        <div class="project-links">
-          <a href="https://www.instagram.com/artist_maryada06/" target="_blank" rel="noopener noreferrer" class="btn-demo">View My Artwork ↗</a>
-        </div>
-      </div>
-      <div class="skill-card" style="min-width:190px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.75rem">
-        <div style="width:76px;height:76px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--indigo),var(--cyan));font-size:2rem">✎</div>
-        <strong style="font-family:var(--font-display);font-size:1.05rem">@artist_maryada06</strong>
-        <span style="font-size:.8rem;color:var(--muted)">Sketches · Portraits · Art</span>
-      </div>
     </div>
   </div>
 </section>
