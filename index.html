@@ -447,19 +447,24 @@ section{position:relative;z-index:2}
 .btn-gh:hover{background:rgba(99,102,241,.1);border-color:var(--indigo);transform:translateY(-2px)}
 
 /* mock preview */
-.project-preview{
-    width:100%;
-    height:350px;
-    overflow:hidden;
-    border-radius:12px;
-    border:1px solid rgba(99,102,241,.12);
+.project-preview {
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 1px solid rgba(99, 102, 241, 0.12);
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.project-image{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    display:block;
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
 }
 .preview-dots{
   position:absolute;top:.8rem;left:1rem;display:flex;gap:.4rem;
