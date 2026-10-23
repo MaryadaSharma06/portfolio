@@ -447,25 +447,19 @@ section{position:relative;z-index:2}
 .btn-gh:hover{background:rgba(99,102,241,.1);border-color:var(--indigo);transform:translateY(-2px)}
 
 /* mock preview */
-.project-preview {
-    width: 100%;
-    height: 350px;
-    overflow: hidden;
-    border-radius: 12px;
-    border: 1px solid rgba(99, 102, 241, 0.12);
-    background: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.project-preview{
+    width:100%;
+    height:350px;
+    overflow:hidden;
+    border-radius:12px;
+    border:1px solid rgba(99,102,241,.12);
 }
 
-.project-image {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center;
-    display: block;
-}
+.project-image{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
 }
 .preview-dots{
   position:absolute;top:.8rem;left:1rem;display:flex;gap:.4rem;
@@ -1006,6 +1000,21 @@ footer span{color:var(--indigo)}
           </div>
           <div class="project-links">
             <a href="https://www.figma.com/design/6Uzg1tU354g4VtYDhdYlU2/Super-admin?t=g0qBZtKuaBU55qqW-0" target="_blank" rel="noopener" class="btn-demo">View Super Admin Figma ↗</a>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-badge">✦ Landing Page Concept</div>
+          <h3 class="project-name" style="font-size:1.3rem">ECtHR AI Research</h3>
+          <p style="color:var(--indigo);font-size:.82rem;margin-bottom:.75rem;font-weight:600">AI Research Landing Page Concept</p>
+          <p class="project-desc">A landing page concept for an ECtHR-focused AI research platform, presenting the project’s purpose, research capabilities, and key information in a clear interface.</p>
+          <div class="project-stack" style="margin-bottom:1.25rem">
+            <span class="stack-tag">Landing Page Design</span>
+            <span class="stack-tag">Landing Page</span>
+            <span class="stack-tag">Web Design</span>
+          </div>
+          <div class="project-links">
+            <a href="https://ecthr-ai-research.preview.emergentagent.com/" target="_blank" rel="noopener" class="btn-demo">View Live Concept ↗</a>
           </div>
         </div>
 
